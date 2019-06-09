@@ -23,15 +23,18 @@ app.get('/', function (req, res) {
 });
 
 function onConnection(socket) {
-    printLog('A user connected:: ' + socket.id);
+    console.log('A user connected:: ' + socket.id);
+//    printLog('A user connected:: ' + socket.id);
 
     socket.on('message', function (message) {
-        printLog(message);
+        console.log(message);
+//        printLog(message);
         io.emit('message', message);
     });
 
     socket.on('disconnect', function () {
-        printLog('A user disconnected:: ' + socket.id);
+        console.log('A user disconnected:: ' + socket.id);
+//        printLog('A user disconnected:: ' + socket.id);
     });
 }
 
