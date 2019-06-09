@@ -13,9 +13,13 @@ var io = require('socket.io')(http);
 app.use(express.static(__dirname + '/public'));
 var port = process.env.PORT || 3000;
 
-http.listen(port,function(){
-   console.log('server listening on port ' + port);
-   io.on('connection', onConnection);
+http.listen(port, function () {
+    console.log('server listening on port ' + port);
+    io.on('connection', onConnection);
+});
+
+app.get('/', function (req, res) {
+    res.send('connected');
 });
 
 function onConnection(socket) {
