@@ -1,0 +1,19 @@
+{
+    "name": "LiveLocation",
+    "version": "1.0.0",
+    "main": "location_tracker.js",
+    "keywords": [
+        "util",
+        "functional",
+        "server",
+        "client",
+        "browser"
+    ],
+    "author": "saagar",
+    "contributors": [],
+    "dependencies": {
+        "socket.io": "^2.1.1",
+        "nodemon": "^1.18.4",
+        "express": "^4.16.3"
+    }
+}
