@@ -10,7 +10,6 @@ var express = require('express');
 var app = express();
 var http = require('http').Server(app);
 var io = require('socket.io')(http);
-//app.use(express.static(__dirname + '/public'));
 var port = process.env.PORT || 3000;
 
 http.listen(port, function () {
@@ -24,17 +23,14 @@ app.get('/', function (req, res) {
 
 function onConnection(socket) {
     console.log('A user connected:: ' + socket.id);
-//    printLog('A user connected:: ' + socket.id);
 
     socket.on('message', function (message) {
         console.log(message);
-//        printLog(message);
         io.emit('message', message);
     });
 
     socket.on('disconnect', function () {
         console.log('A user disconnected:: ' + socket.id);
-//        printLog('A user disconnected:: ' + socket.id);
     });
 }
 
